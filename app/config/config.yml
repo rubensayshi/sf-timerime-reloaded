@@ -30,7 +30,7 @@ doctrine:
            HelloBundle: ~
            TimelineBundle: 
                type: yml
-               dir: Resources/config/doctrine  
+               dir: Resources/config/doctrine/metadata/orm  
 
 
 ## Swiftmailer Configuration
