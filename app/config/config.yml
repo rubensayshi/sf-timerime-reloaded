@@ -6,7 +6,7 @@ framework:
         secret: xxxxxxxxxx
     router:        { resource: "%kernel.root_dir%/config/routing.yml" }
     validation:    { enabled: true, annotations: true }
-    templating:    { engines: ['twig'] } #assets_version: SomeVersionScheme
+    templating:    { engines: ['twig', 'php'] } #assets_version: SomeVersionScheme
     session:
         default_locale: en
         lifetime:       3600
@@ -18,16 +18,20 @@ twig:
     strict_variables: %kernel.debug%
 
 ## Doctrine Configuration
-#doctrine:
-#   dbal:
-#       dbname:   xxxxxxxx
-#       user:     xxxxxxxx
-#       password: ~
-#       logging:  %kernel.debug%
-#   orm:
-#       auto_generate_proxy_classes: %kernel.debug%
-#       mappings:
-#           HelloBundle: ~
+doctrine:
+   dbal:
+       dbname:   timerime
+       user:     root
+       password: root
+       logging:  %kernel.debug%
+   orm:
+       auto_generate_proxy_classes: %kernel.debug%
+       mappings:
+           HelloBundle: ~
+           TimelineBundle: 
+               type: yml
+               dir: Resources/config/doctrine  
+
 
 ## Swiftmailer Configuration
 #swiftmailer:
