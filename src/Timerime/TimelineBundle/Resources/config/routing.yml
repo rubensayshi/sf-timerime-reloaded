@@ -1,3 +1,11 @@
-#homepage:
-#    pattern:  /
-#    defaults: { _controller: TimelineBundle:Default:index }
+homepage:
+    pattern:  /
+    defaults: { _controller: TimelineBundle:Timeline:index }
+    
+timeline:
+    pattern:  /timeline/{title}/{id}
+    defaults: { _controller: TimelineBundle:Timeline:viewTimeline }
+    
+timeline_item:
+    pattern:  /timeline_item/{title}/{id}
+    defaults: { _controller: TimelineBundle:Timeline:viewTimelineItem }

@@ -27,7 +27,6 @@ doctrine:
    orm:
        auto_generate_proxy_classes: %kernel.debug%
        mappings:
-           HelloBundle: ~
            TimelineBundle: 
                type: yml
                dir: Resources/config/doctrine/metadata/orm  

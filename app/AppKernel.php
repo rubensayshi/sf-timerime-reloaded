@@ -17,7 +17,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\DoctrineBundle\DoctrineBundle(),
 
             // register your bundles
-            new Sensio\HelloBundle\HelloBundle(),
+            //new Sensio\HelloBundle\HelloBundle(),
             new Timerime\TimelineBundle\TimelineBundle(),
         );
 

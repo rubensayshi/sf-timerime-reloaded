@@ -1,0 +1,52 @@
+Timerime\TimelineBundle\Entity\TimelineItem:
+  type: entity
+  table: timeline_item
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+    timelineId:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      column: timeline_id
+    authorId:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+      column: author_id
+    title:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+    content:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+    startdate:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+    enddate:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+  oneToOne:
+    timeline:
+      targetEntity: Timeline
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        timeline_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }
