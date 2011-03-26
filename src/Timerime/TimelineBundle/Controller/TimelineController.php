@@ -5,14 +5,29 @@ namespace Timerime\TimelineBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class TimelineController extends Controller
-{
+{		
+	/**
+	 * @return Doctrine\ORM\EntityManager
+	 */
+	public function getEntityManager()
+	{
+		return $this->get('doctrine.orm.entity_manager');
+	}
+	
+	/**
+	 * @return Symfony\Component\HttpFoundation\Request
+	 */
+	public function getRequest()
+	{
+		return $this->get('request');
+	}
+	
     public function indexAction()
-    {
-    	$timelines = array(
-    		array('id' => 1, 'title' => 'timeline #1'),
-    		array('id' => 2, 'title' => 'timeline #2'),
-    	);
-    	
+    {    	
+    	$timelines = 		$this->getEntityManager()
+    							->getRepository('Timerime\TimelineBundle\Entity\Timeline')
+    							->getTimelines();
+    	    	
         return $this->render('TimelineBundle:Default:index.html.php', array(
         	'timelines'			=> $timelines,
         ));
@@ -20,22 +35,20 @@ class TimelineController extends Controller
     
     public function viewTimelineAction()
     {
-    	$timeline = array('id' => 1, 'title' => 'timeline #1');
-    	
-    	$timelineItems = array(
-    		array('id' => 1, 'title' => 'item #1'),
-    		array('id' => 2, 'title' => 'item #2'),
-    	);
+    	$timeline = 		$this->getEntityManager()
+    							->getRepository('Timerime\TimelineBundle\Entity\Timeline')
+    							->find($this->getRequest()->get('id'));
     	
         return $this->render('TimelineBundle:Default:view_timeline.html.php', array(
         	'timeline'			=> $timeline,
-        	'timelineItems'		=> $timelineItems,
         ));
     }
     
     public function viewTimelineItemAction()
     {    	
-    	$timelineItem = array('id' => 1, 'title' => 'item #1');
+    	$timelineItem = 		$this->getEntityManager()
+    							->getRepository('Timerime\TimelineBundle\Entity\TimelineItem')
+    							->find($this->getRequest()->get('id'));
     	
         return $this->render('TimelineBundle:Default:view_timeline_item.html.php', array(
         	'timelineItem'		=> $timelineItem,

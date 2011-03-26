@@ -1,6 +1,7 @@
 Timerime\TimelineBundle\Entity\Timeline:
   type: entity
   table: timeline
+  repositoryClass: Timerime\TimelineBundle\Entity\TimelineRepository
   fields:
     id:
       id: true
@@ -18,8 +19,12 @@ Timerime\TimelineBundle\Entity\Timeline:
       type: string
       length: 45
       fixed: false
-      nullable: true
-  oneToOne:
+      nullable: true  
+  oneToMany:
+    timeline_items:
+      targetEntity: TimelineItem
+      mappedBy: timeline
+  manyToOne:
     author:
       targetEntity: User
       cascade: {  }

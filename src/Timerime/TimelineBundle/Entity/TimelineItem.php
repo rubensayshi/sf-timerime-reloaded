@@ -13,11 +13,6 @@ class TimelineItem
     private $id;
 
     /**
-     * @var integer $timelineId
-     */
-    private $timelineId;
-
-    /**
      * @var string $authorId
      */
     private $authorId;
@@ -55,16 +50,6 @@ class TimelineItem
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Get timelineId
-     *
-     * @return integer $timelineId
-     */
-    public function getTimelineId()
-    {
-        return $this->timelineId;
     }
 
     /**
