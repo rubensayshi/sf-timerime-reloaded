@@ -1,0 +1,17 @@
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+
+    providers:
+        main:
+            users:
+                foo: { password: bar, roles: ROLE_USER }
+
+    firewalls:
+        main:
+            pattern:    /.*
+            http_basic: true
+            logout:     true
+
+    access_control:
+        - { path: /.*, role: ROLE_USER }

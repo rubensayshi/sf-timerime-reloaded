@@ -30,13 +30,7 @@ doctrine:
            TimelineBundle: 
                type: yml
                dir: Resources/config/doctrine/metadata/orm  
-
-
-## Swiftmailer Configuration
-#swiftmailer:
-#    transport:  smtp
-#    encryption: ssl
-#    auth_mode:  login
-#    host:       smtp.gmail.com
-#    username:   xxxxxxxx
-#    password:   xxxxxxxx
+   
+## Imports
+imports:
+    - { resource: security.yml }

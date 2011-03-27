@@ -15,6 +15,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\ZendBundle\ZendBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Symfony\Bundle\DoctrineBundle\DoctrineBundle(),
+            new Symfony\Bundle\SecurityBundle\SecurityBundle(),
 
             // register your bundles
             //new Sensio\HelloBundle\HelloBundle(),
