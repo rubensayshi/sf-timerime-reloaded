@@ -1,6 +1,6 @@
 <?php $view->extend('TimelineBundle::layout.html.php') ?>
 
-<h3>Timeline [<?= $timeline->getTitle() ?>]</h3>
+<h3>Timeline [<?= $timeline->getTitle() ?>] <a href="<?php echo $view['router']->generate('homepage') ?>">[^]</a></h3>
 <ul>
 <? foreach($timeline->getTimelineItems() as $timelineItem): ?>
 	<li>
