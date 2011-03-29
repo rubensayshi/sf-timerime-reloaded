@@ -29,12 +29,12 @@ Timerime\TimelineBundle\Entity\TimelinePeriod:
       length: 45
       fixed: false
       nullable: true
-  oneToOne:
+  manyToOne:
     timeline:
       targetEntity: Timeline
       cascade: {  }
       mappedBy: null
-      inversedBy: null
+      inversedBy: timeline_period
       joinColumns:
         timeline_id:
           referencedColumnName: id

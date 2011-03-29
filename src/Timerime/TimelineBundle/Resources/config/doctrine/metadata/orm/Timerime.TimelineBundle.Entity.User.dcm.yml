@@ -29,4 +29,8 @@ Timerime\TimelineBundle\Entity\User:
       length: 50
       fixed: false
       nullable: true
+  oneToMany:
+    timelines:
+      targetEntity: Timeline
+      mappedBy: timeline
   lifecycleCallbacks: {  }

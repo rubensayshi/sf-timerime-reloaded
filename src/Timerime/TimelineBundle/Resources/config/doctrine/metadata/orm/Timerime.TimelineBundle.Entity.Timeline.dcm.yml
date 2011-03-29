@@ -24,12 +24,15 @@ Timerime\TimelineBundle\Entity\Timeline:
     timeline_items:
       targetEntity: TimelineItem
       mappedBy: timeline
+    timeline_periods:
+      targetEntity: TimelinePeriod
+      mappedBy: timeline
   manyToOne:
     author:
       targetEntity: User
       cascade: {  }
       mappedBy: null
-      inversedBy: null
+      inversedBy: timeline
       joinColumns:
         author_id:
           referencedColumnName: id

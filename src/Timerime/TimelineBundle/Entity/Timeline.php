@@ -25,7 +25,12 @@ class Timeline
     /**
      * @var Timerime\TimelineBundle\Entity\TimelineItem
      */
-    private $timeline_item;
+    private $timeline_items;
+
+    /**
+     * @var Timerime\TimelineBundle\Entity\TimelinePeriod
+     */
+    private $timeline_periods;
 
     /**
      * @var Timerime\TimelineBundle\Entity\User
@@ -83,23 +88,43 @@ class Timeline
     }
 
     /**
-     * Add timeline_item
+     * Add timeline_items
      *
-     * @param Timerime\TimelineBundle\Entity\TimelineItem $timelineItem
+     * @param Timerime\TimelineBundle\Entity\TimelineItem $timelineItems
      */
-    public function addTimelineItem(\Timerime\TimelineBundle\Entity\TimelineItem $timelineItem)
+    public function addTimelineItems(\Timerime\TimelineBundle\Entity\TimelineItem $timelineItems)
     {
-        $this->timeline_item[] = $timelineItem;
+        $this->timeline_items[] = $timelineItems;
     }
 
     /**
-     * Get timeline_item
+     * Get timeline_items
      *
-     * @return Doctrine\Common\Collections\Collection $timelineItem
+     * @return Doctrine\Common\Collections\Collection $timelineItems
      */
-    public function getTimelineItem()
+    public function getTimelineItems()
     {
-        return $this->timeline_item;
+        return $this->timeline_items;
+    }
+
+    /**
+     * Add timeline_periods
+     *
+     * @param Timerime\TimelineBundle\Entity\TimelinePeriod $timelinePeriods
+     */
+    public function addTimelinePeriods(\Timerime\TimelineBundle\Entity\TimelinePeriod $timelinePeriods)
+    {
+        $this->timeline_periods[] = $timelinePeriods;
+    }
+
+    /**
+     * Get timeline_periods
+     *
+     * @return Doctrine\Common\Collections\Collection $timelinePeriods
+     */
+    public function getTimelinePeriods()
+    {
+        return $this->timeline_periods;
     }
 
     /**
@@ -120,29 +145,5 @@ class Timeline
     public function getAuthor()
     {
         return $this->author;
-    }
-    /**
-     * @var Timerime\TimelineBundle\Entity\TimelineItem
-     */
-    private $timeline_items;
-
-    /**
-     * Add timeline_items
-     *
-     * @param Timerime\TimelineBundle\Entity\TimelineItem $timelineItems
-     */
-    public function addTimelineItems(\Timerime\TimelineBundle\Entity\TimelineItem $timelineItems)
-    {
-        $this->timeline_items[] = $timelineItems;
-    }
-
-    /**
-     * Get timeline_items
-     *
-     * @return Doctrine\Common\Collections\Collection $timelineItems
-     */
-    public function getTimelineItems()
-    {
-        return $this->timeline_items;
     }
 }

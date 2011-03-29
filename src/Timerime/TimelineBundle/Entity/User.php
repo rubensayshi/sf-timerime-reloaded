@@ -33,6 +33,11 @@ class User
     private $type;
 
     /**
+     * @var Timerime\TimelineBundle\Entity\Timeline
+     */
+    private $timelines;
+
+    /**
      * Get id
      *
      * @return integer $id
@@ -120,5 +125,25 @@ class User
     public function getType()
     {
         return $this->type;
+    }
+
+    /**
+     * Add timelines
+     *
+     * @param Timerime\TimelineBundle\Entity\Timeline $timelines
+     */
+    public function addTimelines(\Timerime\TimelineBundle\Entity\Timeline $timelines)
+    {
+        $this->timelines[] = $timelines;
+    }
+
+    /**
+     * Get timelines
+     *
+     * @return Doctrine\Common\Collections\Collection $timelines
+     */
+    public function getTimelines()
+    {
+        return $this->timelines;
     }
 }
