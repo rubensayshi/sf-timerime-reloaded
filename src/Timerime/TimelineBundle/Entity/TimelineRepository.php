@@ -12,4 +12,8 @@ use Doctrine\ORM\EntityRepository;
  */
 class TimelineRepository extends EntityRepository
 {
+	public function getTimelines()
+	{
+		return $this->findAll();
+	}
 }
